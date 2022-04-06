@@ -1,0 +1,24 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Validate the Enclosures
+      fail: msg="Two enclosures are required to run this example."
+      when: (enclosures|length < 1)
+    
+    - name: Sort the enclosures by name
+      set_fact: enclosures_ordered="{{enclosures | sort(attribute='name') | list }}"
+
+    - name: Create a Logical Enclosure
+      oneview_logical_enclosure:
+        config: "{{ config }}"
+        state: present
+        data:
+            enclosureUris:
+              - "{{ enclosures_ordered.0.uri }}"
+            enclosureGroupUri: "{{ enclosure_group_uri }}"
+            name: "{{ logical_enclosure_name }}"
+      ignore_errors: true
+      delegate_to: localhost

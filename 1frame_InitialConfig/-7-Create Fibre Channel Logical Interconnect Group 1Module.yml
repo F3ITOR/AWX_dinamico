@@ -1,0 +1,31 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create Fibre Channel Logical Interconnect Group
+      oneview_logical_interconnect_group:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: "{{ LIG_SAN }}"
+          state: "Active"
+          redundancyType: "{{ redundancy_type_san }}"
+          interconnectMapTemplate:
+            interconnectMapEntryTemplates:
+              - logicalLocation:
+                  locationEntries:
+                    - type: "{{ type_bay }}"
+                      relativeValue: "{{ bay_2 }}"
+                    - type: "{{ type_enclosure }}"
+                      relativeValue: "-1"
+                enclosureIndex: "-1"
+                permittedInterconnectTypeName: "{{ vc_se_16gb_type_name }}" # Verify how to handle this variable
+          enclosureType: "{{ enclosure_model }}"
+          enclosureIndexes: [-1]
+          interconnectBaySet: "{{ bay_2 }}"
+      register: san_lig
+      delegate_to: localhost
+
+    - set_fact: san_logical_interconnect_group="{{ san_lig['ansible_facts']['logical_interconnect_group']['uri'] }}"

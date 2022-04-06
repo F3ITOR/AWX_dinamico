@@ -1,0 +1,28 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create Ethernet Networks
+      oneview_ethernet_network:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: '{{ item.key }}'
+          vlanId: "{{ item.value.vlanId }}"
+          ethernetNetworkType: "{{ item.value.ethernetNetworkType }}"
+          purpose: "{{ item.value.purpose }}"
+          smartLink: "{{ item.value.smartLink }}"
+          privateNetwork: "{{ item.value.private_network }}"
+          bandwidth:
+              maximumBandwidth: "{{ item.value.mB }}"
+              typicalBandwidth: "{{ item.value.pB }}"
+      loop: "{{ lookup('dict', eth, wantlist=True) }}"
+      register: eth_facts
+      delegate_to: localhost
+
+    - name: Create Ethernet URIs Dictionary
+      set_fact:
+        eth_uri_dict: "{{ eth_uri_dict|default({}) | combine( {item.ansible_facts.ethernet_network.name: item.ansible_facts.ethernet_network.uri}) }}"
+      loop: "{{ lookup('list', eth_facts['results']) }}"

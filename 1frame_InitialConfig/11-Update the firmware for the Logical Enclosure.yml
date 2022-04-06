@@ -1,0 +1,27 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Gather facts about a Firmware Driver by name
+      oneview_firmware_driver_facts:
+        config: "{{ config }}"
+        name: "HPE Synergy Custom SPP 201912 2020 01 25" # Must be Variable
+
+    - set_fact: firmware_baseline_uri="{{ firmware_drivers[0]['uri'] }}"
+
+    - name: Update the firmware for the Logical Enclosure
+      oneview_logical_enclosure:
+        config: "{{ config }}"
+        state: firmware_updated
+        data:
+            name: "{{ logical_enclosure_name }}"
+            firmware:
+                firmwareBaselineUri: "{{ firmware_baseline_uri }}"
+                firmwareUpdateOn: "EnclosureOnly"
+                forceInstallFirmware: "false"
+            custom_headers:
+                if-Match: '*'
+      ignore_errors: true
+      delegate_to: localhost

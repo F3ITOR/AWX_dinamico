@@ -1,0 +1,1767 @@
+###
+# Copyright (2016-2019) Hewlett Packard Enterprise Development LP
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# You may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+###
+---
+#Global variables
+bay_1: 1
+bay_2: 2
+bay_3: 3
+bay_4: 4
+bay_5: 5
+bay_6: 6
+enclosure_1: 1
+enclosure_model: SY12000
+dict_user:
+  HPE:
+    full_name: "aaaaaa aaaaa"
+    password: 1234567890 
+    email: "testUser@example.com"
+    type_user: "UserAndPermissions"
+    mobile_phone: 911111111
+    role_name: "Infrastructure administrator"
+  HPE_Admin:
+    full_name: "aaaaaa aaaaa"
+    password: 1234567890
+    email: "testUser@example.com"
+    type_user: "UserAndPermissions"
+    mobile_phone: 911111111
+    role_name: "Infrastructure administrator"
+subnet:
+  Subnet_01:
+    type_subnet: Subnet
+    networkID: 10.2.0.0
+    subnetmask: 255.255.255.0
+    gateway: 10.2.0.250
+    domain: voyager.hp
+    dnsServers: 10.2.0.252
+name: Range01
+type_range: Range
+range_cat: Custom
+disabled_range_name: DISABLED - Experts Range
+startAddress: 10.2.0.10
+endAddress: 10.2.0.20
+
+eth:
+  vLan_0217_172.23.56.0_22:
+    vlanId: 217
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0232_172.23.33.0_24:
+    vlanId: 232
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0401_172.16.80.0_24:
+    vlanId: 401
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0402_172.16.68.0_24:
+    vlanId: 402
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0403_172.16.82.128_25:
+    vlanId: 403
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0407_172.16.81.0_24:
+    vlanId: 407
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0408_172.16.82.0_25:
+    vlanId: 408
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0411_172.19.142.0_24:
+    vlanId: 411
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0414_172.16.99.0_24:
+    vlanId: 414
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0501_172.16.91.0_24:
+    vlanId: 501
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0513_172.19.143.32_27:
+    vlanId: 513
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0517_172.19.216.0_24:
+    vlanId: 517
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0519_172.19.201.0_24:
+    vlanId: 519
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0520_192.168.151.0_24:
+    vlanId: 520
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0524_172.16.200.16_28:
+    vlanId: 524
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0526_172.19.128.0_25:
+    vlanId: 526
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0528_192.168.187.128_25:
+    vlanId: 528
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0530_192.168.152.0_24:
+    vlanId: 530
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0532_10.254.249.0_24:
+    vlanId: 532
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0533_10.254.250.0_24:
+    vlanId: 533
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0534_10.254.247.0_24:
+    vlanId: 534
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0535_192.168.97.0_24:
+    vlanId: 535
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0536_192.168.98.0_24:
+    vlanId: 536
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0537_192.168.145.0_24:
+    vlanId: 537
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0538_192.168.147.0_24:
+    vlanId: 538
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0539_192.168.148.0_24:
+    vlanId: 539
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0541_172.16.96.0_26:
+    vlanId: 541
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0542_172.16.96.64_26:
+    vlanId: 542
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0546_172.16.95.64_26:
+    vlanId: 546
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0547_172.16.95.128_26:
+    vlanId: 547
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0568_172.16.127.0_25:
+    vlanId: 568
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0569_172.16.127.128_25:
+    vlanId: 569
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0581_10.254.248.0_24:
+    vlanId: 581
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0582_192.168.146.0_28:
+    vlanId: 582
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0583_192.168.146.16_28:
+    vlanId: 583
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0585_192.168.149.0_28:
+    vlanId: 585
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0586_192.168.149.16_28:
+    vlanId: 586
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0611_172.16.89.0_27:
+    vlanId: 611
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0624_10.65.0.0_22:
+    vlanId: 624
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0642_172.19.131.0_24:
+    vlanId: 642
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0645_10.125.1.0_24:
+    vlanId: 645
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0646_10.125.0.0_24:
+    vlanId: 646
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0647_10.120.69.0_29:
+    vlanId: 647
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0648_10.120.69.8_29:
+    vlanId: 648
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0649_10.120.192.0_29:
+    vlanId: 649
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0650_10.120.64.0_24:
+    vlanId: 650
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0651_10.120.65.0_24:
+    vlanId: 651
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0652_10.120.66.0_27:
+    vlanId: 652
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0653_10.120.66.32_27:
+    vlanId: 653
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0654_10.120.68.0_24:
+    vlanId: 654
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0660_10.121.64.0_24:
+    vlanId: 660
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0661_10.121.65.0_24:
+    vlanId: 661
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0662_10.121.66.0_27:
+    vlanId: 662
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0663_10.121.66.32_27:
+    vlanId: 663
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0664_10.121.63.0_24:
+    vlanId: 664
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0670_10.124.64.0_24:
+    vlanId: 670
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0671_10.124.65.0_24:
+    vlanId: 671
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0672_10.124.66.0_28:
+    vlanId: 672
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0673_10.124.66.32_27:
+    vlanId: 673
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0674_10.124.67.0_24:
+    vlanId: 674
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0691_10.11.11.0_25:
+    vlanId: 691
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0692_10.11.11.128_25:
+    vlanId: 692
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0693_10.11.12.0_25:
+    vlanId: 693
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0694_110.11.12.128_25:
+    vlanId: 694
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_0695_10.15.11.0_24:
+    vlanId: 695
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1123_10.160.14.0_25:
+    vlanId: 1123
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1130_10.11.18.0_28:
+    vlanId: 1130
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1140_10.11.22.32_27:
+    vlanId: 1140
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1141_10.11.24.32_27:
+    vlanId: 1141
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1143_10.11.24.128_27:
+    vlanId: 1143
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1144_10.11.24.160_27:
+    vlanId: 1144
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1145_10.11.20.160_27:
+    vlanId: 1145
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1146_10.11.24.0_27:
+    vlanId: 1146
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1147_10.11.25.0_27:
+    vlanId: 1147
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1148_10.11.25.32_27:
+    vlanId: 1148
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1149_10.11.24.192_27:
+    vlanId: 1149
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1150_10.11.26.128_25:
+    vlanId: 1150
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1151_10.11.66.0_24:
+    vlanId: 1151
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1153_10.11.28.0_25:
+    vlanId: 1153
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1157_10.11.30.0_25:
+    vlanId: 1157
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1161_10.11.32.0_25:
+    vlanId: 1161
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1163_10.11.33.0_25:
+    vlanId: 1163
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1165_10.11.34.0_25:
+    vlanId: 1165
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1166_10.11.34.128_25:
+    vlanId: 1166
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1167_10.11.35.0_24:
+    vlanId: 1167
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1168_10.11.18.64_28:
+    vlanId: 1168
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1169_10.11.36.0_25:
+    vlanId: 1169
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1171_10.11.37.0_25:
+    vlanId: 1171
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1173_10.11.26.0_25:
+    vlanId: 1173
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1175_172.22.10.0_24:
+    vlanId: 1175
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1176_10.11.39.0_27:
+    vlanId: 1176
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1182_10.11.45.0_27:
+    vlanId: 1182
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1185_10.11.46.0_24:
+    vlanId: 1185
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1186_10.11.48.0_24:
+    vlanId: 1186
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1199_10.11.56.0_24:
+    vlanId: 1199
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1230_10.12.18.0_27:
+    vlanId: 1230
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1231_10.12.18.32_27:
+    vlanId: 1231
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1233_10.12.18.96_27:
+    vlanId: 1233
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1234_10.12.18.128_27:
+    vlanId: 1234
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1235_10.12.18.160_27:
+    vlanId: 1235
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1236_10.12.18.192_27:
+    vlanId: 1236
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1237_10.12.19.0_25:
+    vlanId: 1237
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1241_10.12.21.0_25:
+    vlanId: 1241
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1245_10.12.23.0_25:
+    vlanId: 1245
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1249_10.12.25.0_25:
+    vlanId: 1249
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1253_10.12.27.0_25:
+    vlanId: 1253
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1257_10.12.29.0_25:
+    vlanId: 1257
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1259_10.12.30.0_25:
+    vlanId: 1259
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1262_10.12.32.0_27:
+    vlanId: 1262
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1263_10.12.33.0_24:
+    vlanId: 1263
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1265_10.12.35.0_27:
+    vlanId: 1265
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1269_10.12.40.0_24:
+    vlanId: 1269
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1302_10.13.13.32_27:
+    vlanId: 1302
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1403_10.16.15.0_24:
+    vlanId: 1403
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1404_10.16.16.0_24:
+    vlanId: 1404
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1700_10.15.14.0_24:
+    vlanId: 1700
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1812_10.14.27.0_24:
+    vlanId: 1812
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1813_10.14.28.0_24:
+    vlanId: 1813
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1821_10.14.32.128_27:
+    vlanId: 1821
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1824_10.14.32.224_27:
+    vlanId: 1824
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1825_10.14.33.0_27:
+    vlanId: 1825
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1826_10.14.33.32_27:
+    vlanId: 1826
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1827_10.14.33.64_27:
+    vlanId: 1827
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1828_10.14.33.96_27:
+    vlanId: 1828
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1830_10.14.35.0_27:
+    vlanId: 1830
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1862_10.14.33.128_28:
+    vlanId: 1862
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1904_10.14.136.0_26:
+    vlanId: 1904
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1920_10.14.146.0_24:
+    vlanId: 1920
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1921_10.14.147.0_24:
+    vlanId: 1921
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1922_10.14.148.0_27:
+    vlanId: 1922
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1924_10.14.148.64_26:
+    vlanId: 1924
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1925_10.14.148.128_27:
+    vlanId: 1925
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1926_10.14.148.160_27:
+    vlanId: 1926
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1927_10.14.148.192_27:
+    vlanId: 1927
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1928_10.14.150.0_27:
+    vlanId: 1928
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1929_10.14.151.0_25:
+    vlanId: 1929
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1933_10.14.153.0_25:
+    vlanId: 1933
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1937_10.14.155.11_25:
+    vlanId: 1937
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1941_10.14.157.0_25:
+    vlanId: 1941
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1943_10.14.158.0_25:
+    vlanId: 1943
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1945_10.14.159.0_25:
+    vlanId: 1945
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1947_10.14.160.0_24:
+    vlanId: 1947
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1949_10.14.161.0_25:
+    vlanId: 1949
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1951_10.14.162.0_25:
+    vlanId: 1951
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1955_10.14.165.0_27:
+    vlanId: 1955
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_1959_10.14.169.0_24:
+    vlanId: 1959
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2044_10.15.21.64_27:
+    vlanId: 2044
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2045_10.15.21.96_27:
+    vlanId: 2045
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2047_10.15.19.128_27:
+    vlanId: 2047
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2072_10.15.33.0_25:
+    vlanId: 2072
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2083_10.15.36.0_27:
+    vlanId: 2083
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2084_10.15.36.32_27:
+    vlanId: 2084
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2089_10.15.36.96_27:
+    vlanId: 2089
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2100_10.16.200.0_24:
+    vlanId: 2100
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2103_10.16.203.0_24:
+    vlanId: 2103
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2104_10.16.204.0_24:
+    vlanId: 2104
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2105_10.16.205.0_24:
+    vlanId: 2105
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2107_10.16.207.0_24:
+    vlanId: 2107
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2111_10.16.211.0_24:
+    vlanId: 2111
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2112_10.16.212.0_28:
+    vlanId: 2112
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2202_10.17.202.0_24:
+    vlanId: 2202
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2400_10.12.200.0_27:
+    vlanId: 2400
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2401_10.12.201.0_27:
+    vlanId: 2401
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2402_10.12.202.0_25:
+    vlanId: 2402
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2403_10.12.202.128_25:
+    vlanId: 2403
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2406_10.12.204.0_25:
+    vlanId: 2406
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2410_10.12.206.0_25:
+    vlanId: 2410
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2414_10.12.208.0_25:
+    vlanId: 2414
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2418_10.12.210.0_25:
+    vlanId: 2418
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2422_10.12.212.0_25:
+    vlanId: 2422
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2426_10.12.214.0_27:
+    vlanId: 2426
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2427_10.12.214.32_27:
+    vlanId: 2427
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2428_10.12.214.64_27:
+    vlanId: 2428
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2503_10.11.197.0_27:
+    vlanId: 2503
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2504_10.11.198.0_27:
+    vlanId: 2504
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2505_10.11.200.0_27:
+    vlanId: 2505
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2506_10.11.200.32_27:
+    vlanId: 2506
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2507_10.11.197.32_27:
+    vlanId: 2507
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2508_10.11.201.128_25:
+    vlanId: 2508
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2511_10.11.203.0_25:
+    vlanId: 2511
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2515_10.11.205.0_25:
+    vlanId: 2515
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2516_10.11.205.128_25:
+    vlanId: 2516
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2519_10.11.207.0_24:
+    vlanId: 2519
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2521_10.11.208.0_24:
+    vlanId: 2521
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2523_10.11.209.0_25:
+    vlanId: 2523
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2526_10.11.210.0_24:
+    vlanId: 2526
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2527_10.11.211.0_25:
+    vlanId: 2527
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2531_10.11.201.0_25:
+    vlanId: 2531
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2532_10.11.213.0_27:
+    vlanId: 2532
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2533_10.11.213.32_27:
+    vlanId: 2533
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2534_10.11.213.64_27:
+    vlanId: 2534
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2535_10.11.213.96_26:
+    vlanId: 2535
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2700_10.15.200.0_24:
+    vlanId: 2700
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2725_10.15.213.0_27:
+    vlanId: 2725
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2727_10.15.213.64_27:
+    vlanId: 2727
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2730_10.32.43.0_25:
+    vlanId: 2730
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2803_10.14.106.0_27:
+    vlanId: 2803
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2804_10.14.107.0_27:
+    vlanId: 2804
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2900_10.14.232.0_27:
+    vlanId: 2900
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2901_10.14.233.0_27:
+    vlanId: 2901
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2902_10.14.234.0_25:
+    vlanId: 2902
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2906_10.14.236.0_25:
+    vlanId: 2906
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2910_10.14.238.0_25:
+    vlanId: 2910
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2914_10.14.240.0_25:
+    vlanId: 2914
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2918_10.14.242.0_25:
+    vlanId: 2918
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2920_10.14.243.0_24:
+    vlanId: 2920
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2922_10.14.244.0_25:
+    vlanId: 2922
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2926_10.14.246.32_27:
+    vlanId: 2926
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+  vLan_2927_10.14.246.96_26:
+    vlanId: 2927
+    ethernetNetworkType: Tagged
+    mB: 50000
+    pB: 2500
+    smartLink: true
+    purpose: General
+    private_network: false
+
+
+LIG_NameA: "LIG_A"
+enclosure_model: SY12000
+enclosure_1: 1
+redundancy_typeA: NonRedundantASide
+type_enclosure: Enclosure
+type_bay: Bay
+type_port: Port
+vc_se_40gb_type_name: Virtual Connect SE 100Gb F32 Module for Synergy
+uplink_nameA: UplinkSet_A
+LIG_NameB: "LIG_B"
+redundancy_typeB: NonRedundantBSide
+uplink_nameB: UplinkSet_B
+firmware_name: HPE Synergy Custom SPP 201903 2020 03 24
+LIG_sas_name: sas_lig
+sas_interconnect_state: Active
+type_bay: Bay
+type_enclosure: Enclosure
+type_port: Port
+sas_interconnect_uri: /rest/sas-interconnect-types/Synergy12GbSASConnectionModule
+LIG_Name: "teste-AWX"
+redundancy_type: Redundant
+LIG_SAN: "LIG_SAN01"
+redundancy_type_san: "Redundant"
+vc_se_16gb_type_name: "Virtual Connect SE 16Gb FC Module for Synergy"
+
+
+logical_enclosure_name: "Demo Room"
+
+enclosure_hostname: 'CZ3927VC1P'
+ov_template: shit 
+enclosure_group_name: "Enclosure_Group 1"
+server_hardware_type_name: SY 480 Gen10 1
+server_name: Teste Profile Ansible-1
+server_hardware: CZ3927VC1P, bay 2
+
+
+esxi: ESXi_Template 

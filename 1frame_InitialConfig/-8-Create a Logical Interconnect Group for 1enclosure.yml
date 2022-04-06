@@ -1,0 +1,124 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create a Logical Interconnect Group for Module40
+      oneview_logical_interconnect_group:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: '{{ LIG_Name }}'
+          enclosureType: "{{ enclosure_model }}"
+          interconnectBaySet: "{{ bay_3 }}"
+          enclosureIndexes: [1]
+          redundancyType: "{{ redundancy_type }}"
+          interconnectMapTemplate:
+            interconnectMapEntryTemplates:
+              - logicalDownlinkUri: ~
+                logicalLocation:
+                    locationEntries:
+                            - relativeValue: "{{ bay_3 }}"
+                              type: "{{ type_bay }}"
+                            - relativeValue: "{{ enclosure_1 }}"
+                              type: "{{ type_enclosure }}"
+                enclosureIndex: "{{ enclosure_1 }}"
+                permittedInterconnectTypeName: "{{ vc_se_40gb_type_name }}"
+              - logicalDownlinkUri: ~
+                logicalLocation:
+                    locationEntries:
+                            - relativeValue: "{{ bay_6 }}"
+                              type: "{{ type_bay }}"
+                            - relativeValue: "{{ enclosure_1 }}"
+                              type: "{{ type_enclosure }}"
+                enclosureIndex: "{{ enclosure_1 }}"
+                permittedInterconnectTypeName: "{{ vc_se_40gb_type_name }}"
+          uplinkSets:
+            - logicalPortConfigInfos:
+              - desiredSpeed: "Speed16G"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: "{{ bay_3 }}"
+                          type: "{{ type_bay }}"
+                        - relativeValue: 82 # Must be variable
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              name: "Fc-FabricA" # Must be variable
+              mode: "Auto" 
+              networkType: "FibreChannel"
+              networkUris:
+                  - "{{ fc_uri_dict.Fabric_A }}"
+            - logicalPortConfigInfos:
+              - desiredSpeed: "Speed16G"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: "{{ bay_3 }}"
+                          type: "{{ type_bay }}"
+                        - relativeValue: 87 # Must be variable
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              name: "Fc-FabricB" # Must be variable
+              mode: "Auto" 
+              networkType: "FibreChannel"
+              networkUris:
+                  - "{{ fc_uri_dict.Fabric_B }}"
+            - logicalPortConfigInfos:
+              - desiredSpeed: "Auto"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: "{{ bay_6 }}" # Must be variable
+                          type: "{{ type_bay }}"
+                        - relativeValue: 62
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              - desiredSpeed: "Auto"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: "{{ bay_6 }}" # Must be variable
+                          type: "{{ type_bay }}"
+                        - relativeValue: 67
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              - desiredSpeed: "Auto"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: 3 # Must be variable
+                          type: "{{ type_bay }}"
+                        - relativeValue: 62
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              - desiredSpeed: "Auto"
+                logicalLocation:
+                      locationEntries:
+                        - relativeValue: 3 # Must be variable
+                          type: "{{ type_bay }}"
+                        - relativeValue: 67
+                          type: "{{ type_port }}"
+                        - relativeValue: 1 # Must be variable
+                          type: "{{ type_enclosure }}"
+              name: "{{ uplink_nameA }}" 
+              mode: "Auto"
+              networkType: "Ethernet"
+              networkUris:
+                  - "{{ eth_uri_dict.MGMT_Servers }}"
+                  - "{{ eth_uri_dict.vMotion }}"
+                  - "{{ eth_uri_dict.DC_Services_IT }}"
+                  - "{{ eth_uri_dict.CyberSecurity_mgmt }}"
+                  - "{{ eth_uri_dict.CyberSecurity_critical_services }}"
+                  - "{{ eth_uri_dict.WinRest_Server }}"
+                  - "{{ eth_uri_dict.Longo_Plano_Server }}"
+                  - "{{ eth_uri_dict.Avtech_Servers }}"
+                  - "{{ eth_uri_dict.Ticketing }}"
+                  - "{{ eth_uri_dict.GEMA }}"
+      register: lig
+      delegate_to: localhost
+      register: lig
+      delegate_to: localhost
+
+    - set_fact: logical_interconnect_group="{{ lig['ansible_facts']['logical_interconnect_group']['uri'] }}"

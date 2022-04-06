@@ -1,0 +1,30 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create a SAS Logical Interconnect Group
+      oneview_sas_logical_interconnect_group:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: "{{ LIG_sas_name }}"
+          state: "{{ sas_interconnect_state }}"
+          interconnectMapTemplate:
+            interconnectMapEntryTemplates:
+              - logicalLocation:
+                  locationEntries:
+                    - type: "{{ type_bay }}"
+                      relativeValue: "{{ bay_1 }}"
+                    - type: "{{ type_enclosure }}"
+                      relativeValue: "{{ enclosure_1 }}"
+                enclosureIndex: "{{ enclosure_1 }}"
+                permittedInterconnectTypeUri: "{{ sas_interconnect_uri }}" # Verify how to handle this variable
+          enclosureType: "{{ enclosure_model }}"
+          enclosureIndexes: ["{{ enclosure_1 }}"]
+          interconnectBaySet: "{{ bay_1 }}"
+      register: sas_lig
+      delegate_to: localhost
+
+    - set_fact: sas_logical_interconnect_group="{{ sas_lig['ansible_facts']['sas_logical_interconnect_group']['uri'] }}"

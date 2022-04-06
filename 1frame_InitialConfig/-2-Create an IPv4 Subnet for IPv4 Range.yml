@@ -1,0 +1,34 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create an IPv4 Subnet for IPv4 Range
+      oneview_id_pools_ipv4_subnet:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: '{{ item.key }}'
+          type: "{{ item.value.type_subnet }}"
+          networkId: "{{ item.value.networkID }}"
+          subnetmask: "{{ item.value.subnetmask }}"
+          gateway: "{{ item.value.gateway }}"
+          domain: "{{ item.value.domain }}"
+          dnsServers:
+            - "{{ item.value.dnsServers }}"
+      loop: "{{ lookup('dict', subnet, wantlist=True) }}"
+      register: ipv4_subnet
+      delegate_to: localhost
+
+    - set_fact: subnet_uri="{{ id_pools_ipv4_subnet['uri'] }}"
+    
+    - name: "Artifact URL of test results to Tower Workflows"
+      set_stats:
+        data:
+          stat01:  "{{ subnet_uri }}"
+          
+    - name: Get facts about all the ranges
+      oneview_id_pools_ipv4_range_facts:
+        config: "{{ config }}"
+      delegate_to: localhost

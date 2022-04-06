@@ -1,0 +1,30 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - debug: var=stat01
+    
+    - name: Create IPV4 Range
+      oneview_id_pools_ipv4_range:
+        config: "{{ config }}"
+        state: present
+        data:
+          name: "{{ name }}" 
+          subnetUri: {{ stat01 }}
+          type: "{{ type_range }}"
+          rangeCategory: "{{ range_cat }}"
+          startAddress: "{{ startAddress }}"
+          endAddress: "{{ endAddress }}"
+      register: ip_range
+      delegate_to: localhost
+      
+    - name: Get facts about all the ranges
+      oneview_id_pools_ipv4_range_facts:
+        config: "{{ config }}"
+      delegate_to: localhost
+  
+    - set_fact: range="{{ ip_range['ansible_facts']['id_pools_ipv4_range']['uri'] }}"
+          #
+          #/rest/id-pools/ipv4/subnets/3f832b93-2d63-4f07-bc3f-d1f913a40bb4

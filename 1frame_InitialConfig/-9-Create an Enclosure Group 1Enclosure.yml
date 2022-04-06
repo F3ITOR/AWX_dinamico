@@ -1,0 +1,45 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create an Enclosure Group
+      oneview_enclosure_group:
+        config: "{{ config }}"
+        state: present
+        data:
+            name: "{{ enclosure_group_name }}"
+            enclosureCount: "{{ enclosure_number }}"
+            ipAddressingMode: "IpPool"
+            ipRangeUris:
+                - "{{ range }}"
+
+            interconnectBayMappings:
+                - interconnectBay: 1
+                  enclosureIndex: 1
+                  logicalInterconnectGroupUri: '{{ sas_logical_interconnect_group }}'
+                - interconnectBay: 2
+                  enclosureIndex: 1
+                  logicalInterconnectGroupUri: ''
+                - interconnectBay: 3
+                  enclosureIndex: 1
+                  logicalInterconnectGroupUri: '{{ logical_interconnect_group }}'
+                - interconnectBay: 4
+                  enclosureIndex: 1
+                  logicalInterconnectGroupUri: '{{ sas_logical_interconnect_group }}'
+                - interconnectBay: 5
+                  enclosureIndex: 1
+                  logicalInterconnectGroupUri: ''
+                - interconnectBay: 6
+                  logicalInterconnectGroupUri: '{{ logical_interconnect_group }}'
+                  enclosureIndex: 1
+      delegate_to: localhost
+      register: enclosure_group
+
+    - set_fact: enclosure_group_uri="{{ enclosure_group['ansible_facts']['enclosure_group']['uri'] }}"
+    
+    - name: "Artifact URL of test results to Tower Workflows"
+      set_stats:
+        data:
+          enclosure_group_uri:  "{{ enclosure_group_uri }}"

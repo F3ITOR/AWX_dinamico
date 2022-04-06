@@ -1,0 +1,9 @@
+{
+  "ip": "172.19.219.126",
+  "credentials": {
+    "userName": "Administrator",
+    "password": "Passw0rd!"
+  },
+  "image_streamer_ip": "10.1.0.121",
+  "api_version": 1000
+}

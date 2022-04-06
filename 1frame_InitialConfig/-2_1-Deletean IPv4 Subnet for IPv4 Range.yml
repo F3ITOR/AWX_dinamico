@@ -1,0 +1,14 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks: 
+    - name: Delete the ID Pools IPV4 Subnet
+      oneview_id_pools_ipv4_subnet:
+        config: "{{ config }}"
+        state: absent
+        data:
+          name: '{{ item.key }}'
+      loop: "{{ lookup('dict', subnet, wantlist=True) }}"
+      delegate_to: localhost

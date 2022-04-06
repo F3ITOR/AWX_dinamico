@@ -1,0 +1,23 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:    
+    - name: Create a User
+      oneview_user:
+        config: "{{ config }}"
+        state: present
+        data:
+          userName: "{{ item.key }}"
+          password: "{{ item.value.password }}"
+          emailAddress: "{{ item.value.email }}"
+          fullName: "{{ item.value.full_name }}"
+          enabled: true
+          type: "{{ item.value.type_user }}"
+          mobilePhone: "{{ item.value.mobile_phone }}"
+          permissions:
+                  - roleName: "{{ item.value.role_name }}"
+      loop: "{{ lookup('dict', dict_user) }}"
+      delegate_to: localhost
+      register: user_1

@@ -1,0 +1,24 @@
+- hosts: all
+  vars:
+    config: "{{ playbook_dir }}/oneview_config.json"
+  vars_files:
+    - "{{ playbook_dir }}/vars/vars.yml"
+  tasks:
+    - name: Create Fibre Channel Networks
+      oneview_fc_network:
+        config: "{{ config }}"
+        state: present
+        validate_etag: False
+        data:
+          name: '{{ item.key }}'
+          fabricType: "{{ item.value.fabricType }}"
+          linkStabilityTime: "{{ item.value.linkStabilityTime }}"
+          autoLoginRedistribution: "{{ item.value.autoLoginRedistribution }}"
+      loop: "{{ lookup('dict', fc, wantlist=True) }}"
+      register: fc_facts
+      delegate_to: localhost
+
+    - name: Create FC URIs Dictionary
+      set_fact:
+        fc_uri_dict: "{{ fc_uri_dict|default({}) | combine( {item.ansible_facts.fc_network.name: item.ansible_facts.fc_network.uri} ) }}"
+      loop: "{{ lookup('list', fc_facts['results']) }}"
